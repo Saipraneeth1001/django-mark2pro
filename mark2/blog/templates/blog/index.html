@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+
+{% if not user.is_authenticated %}
+    <div class="jumbotron">
+
+                <h2>Hello and Welcome Back</h2>
+                <h3>Login To See Some Cool Posts</h3>
+                <h3>New User??</h3>
+                <h4>Then SignUp</h4>
+    <p> This is a Beta Version of this site , </p>
+    <p>You need to remember your username and password</p>
+    <h3>Password change option is not provided!!!!</h3>
+    <p>Once you login you can read every post and if you want to write anything you can create new posts by
+    clicking new post button on the navigation bar, which you can see once you login </p>
+        <p>You can update your post or delete your post once you publish it</p>
+
+        </div>
+    {% endif %}
+{% if user.is_authenticated %}
+    <div class="jumbotron  prime">
+
+    <h3>To checkout the posts , click on the post button on navbar</h3>
+    <h3>Click on the New Post button in the navigation bar to create a new post</h3>
+
+    </div>
+    {% endif %}
+{% endblock %}
